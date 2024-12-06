@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap');
 
 html {
   height: 100%;
@@ -33,6 +34,93 @@ select:not([size]), input[type="date"]{
 }
 
 @layer components {}
+@layer components {
+  .mp_button_small {
+    @apply h-[40px] px-5 flex items-center justify-center font-medium gap-2;
+  }
+  
+  .mp_no_fill_button {
+    @apply bg-transparent border border-primary-main text-primary-main hover:bg-primary-black hover:text-primary-white hover:border-primary-black; 
+  }
+
+  .mp_fill_button {
+    @apply bg-primary-main text-primary-white hover:bg-primary-black hover:text-primary-white;
+  }
+
+  .mp_transition_4 {
+    @apply transition-all duration-[400ms] ease-in-out;
+  }
+
+  .mp_footer_link {
+    @apply text-primary-gray hover:text-primary-main;
+  }
+
+  .mp_nav_menu_item {
+    @apply font-medium capitalize text-primary-black after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-0 after:translate-x-[-50%] after:bg-primary-main after:content-[''] hover:text-primary-main hover:after:w-full;
+  }
+
+  .mp_header_fixed {
+    @apply fixed top-0 left-0 right-0 w-full z-[10] ;
+  }
+
+  .mp_header_sticky {
+    @apply fixed top-0 left-0 right-0 w-full z-[999] bg-primary-white h-fit;
+  }
+
+  .mp_box_shadow {
+    @apply shadow-[0px_4px_16px_rgba(0,0,0,0.06)]
+  }
+
+  .mp_banner_image_shape {
+    @apply h-[64px] w-[64px] rounded-xl bg-primary-white flex items-center justify-center absolute text-3xl shadow-xl;
+  }
+
+  .mp_section_padding {
+    @apply xl:py-[110px] lg:py-[100px] py-[60px] ;
+  }
+
+  .mp_section_title {
+    @apply text-[48px] font-bold text-primary-black tracking-[-2px];
+  }
+
+  .mp_section_des{ 
+    @apply text-[18px] text-primary-gray;
+  }
+
+  .mp_ourprocess_item {
+    @apply bg-custom-gradient-1 px-[30px] py-[42px] text-center flex flex-col justify-between;
+  }
+
+  .mp_ourprocess_item_icon {
+    @apply mx-auto mb-[20px] flex h-[76px] w-[76px] items-center justify-center rounded-md bg-primary-white shadow-xl;
+  }
+
+  .mp_ourprocess_item_title {
+    @apply  font-bold text-[24px] text-primary-black block;
+  }
+
+  .mp_p {
+    @apply text-[18px] text-primary-gray tracking-[-0.5px];
+  }
+  
+  .mp_more {
+    @apply flex items-center justify-center gap-4 text-lg text-primary-black mp_transition_4 hover:text-primary-main;
+  }
+
+  .mp_major_nav_button {
+    @apply cursor-pointer mp_transition_4 flex h-[43px] w-[40px] items-center justify-center rounded-md bg-primary-white text-primary-gray hover:bg-primary-main hover:text-primary-white;
+  }
+
+
+  @keyframes stickyanimations {
+    0% {
+      transform: translateY(-100px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+}
 
 @keyframes load {
 }

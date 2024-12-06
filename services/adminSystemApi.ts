@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { RootState } from '@/store/store';
+import { ProvinceDistricts, ProvinceResponse } from '@/types/addressesTypes';
 
 export const adminSystemApi = createApi({
   reducerPath: 'adminSystemApi',
@@ -16,6 +17,18 @@ export const adminSystemApi = createApi({
   }),
   endpoints: builder => {
     return {
+      getAllProvinces: builder.query<ProvinceResponse, void>({
+        query: () => ({
+          url: '/provinces',
+        }),
+      }),
+
+      getAllDistricts: builder.query<ProvinceDistricts, { id: number }>({
+        query: id => ({
+          url: `/districts/${id}`,
+        }),
+      }),
+
       registerUniversity: builder.mutation({
         query: payload => ({
           url: '/university/register',
@@ -49,4 +62,11 @@ export const adminSystemApi = createApi({
   },
 });
 
-export const { useRegisterUniversityMutation, useRegisterCompanyMutation, useLoginMutation, useGetAllWorkShopsAdminSystemQuery } = adminSystemApi;
+export const {
+  useGetAllProvincesQuery,
+  useGetAllDistrictsQuery,
+  useRegisterUniversityMutation,
+  useRegisterCompanyMutation,
+  useLoginMutation,
+  useGetAllWorkShopsAdminSystemQuery,
+} = adminSystemApi;

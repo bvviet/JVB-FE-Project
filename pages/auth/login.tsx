@@ -57,10 +57,10 @@ const Login = () => {
           router.push('/admin/system/dashboard');
           break;
         case roles.COMPANY:
-          router.push('/admin/company');
+          router.push('/admin/company/dashboard');
           break;
         case roles.UNIVERSITY:
-          router.push('/admin/school');
+          router.push('/admin/school/dashboard');
           break;
         default:
           break;
