@@ -34,7 +34,6 @@ const CompanyApplyWorkshop = ({ idWorkshop, workshopTitle }: { idWorkshop: numbe
     { page, size, keyword, id: idWorkshop, status },
     { refetchOnMountOrArgChange: true }
   );
-
   // const handleConfirmActionApply = async () => {
   //   if (showBackdrop) {
   //     try {
