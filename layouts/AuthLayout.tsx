@@ -5,7 +5,6 @@ import Logo from '@/components/Logo';
 import loginIcon from '@/assets/images/login.jpg';
 import IconRegister1 from '@/assets/images/register1.png';
 import IconRegister2 from '@/assets/images/register2.png';
-import IconRegister3 from '@/assets/images/register3.png';
 import { Loading } from '@/components/Common/Loading';
 import { useAppSelector } from '@/store/hooks';
 

@@ -1,16 +1,16 @@
 // layouts/Portal/PortalLayout.tsx
 import { FC } from 'react';
 import React from 'react';
-import PortalHeader from '@/components/Portal/PortalHeader';
-import PortalFooter from '@/components/Portal/PortalFooter';
 import { ConfigProvider } from 'antd';
 import viVN from 'antd/lib/locale/vi_VN';
+import PortalFooter from '@/components/portal/PortalFooter';
+import PortalHeader from '@/components/portal/PortalHeader';
 interface ProtolLayoutProps {
   children: React.ReactNode;
   type: string;
 }
 
-const PortalLayout: FC<ProtolLayoutProps> = ({ children, type }) => (
+const PortalLayout: FC<ProtolLayoutProps> = ({ children }) => (
   <>
     <ConfigProvider
       locale={viVN}
@@ -48,7 +48,9 @@ const PortalLayout: FC<ProtolLayoutProps> = ({ children, type }) => (
           },
         },
       }}>
-      <PortalHeader type={type} />
+      <PortalHeader
+      //  type={type}
+      />
       {children}
       <PortalFooter />
     </ConfigProvider>

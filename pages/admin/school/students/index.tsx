@@ -139,7 +139,10 @@ const StudentsManagement = () => {
               closeMenuOnSelect={true}
               value={
                 major !== null
-                  ? { value: major, label: (dataMajor?.data || []).find(item => item.id === major)?.majorName || 'Tất cả' }
+                  ? {
+                      value: major,
+                      label: Array.isArray(dataMajor?.data) ? dataMajor.data.find(item => item.id === major)?.majorName || 'Tất cả' : 'Tất cả',
+                    }
                   : { value: null, label: 'Tất cả' }
               }
               options={[

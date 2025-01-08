@@ -5,7 +5,7 @@ import { getUserState } from '@/store/slices/user'; // Assuming you have this se
 
 const useAuthPortalCheck = () => {
   const router = useRouter();
-  const { user, token, roleAccount } = useSelector(getUserState);
+  const { token, roleAccount } = useSelector(getUserState);
 
   useEffect(() => {
     // If not logged in, redirect to home page "/"
